@@ -1,7 +1,6 @@
 library useful_extensions;
 
-/// A Calculator.
-class Calculator {
-  /// Returns [value] plus 1.
-  int addOne(int value) => value + 1;
-}
+part 'package:useful_extensions/string_extensions/string_checks.dart';
+part 'package:useful_extensions/string_extensions/string_transformation.dart';
+part 'package:useful_extensions/string_extensions/valid_strings.dart';
+part 'package:useful_extensions/bool_extensions/bool_extensions.dart';
