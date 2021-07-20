@@ -7,4 +7,13 @@ extension ScopeFunction<T> on T {
     op(this);
     return this;
   }
+
+  T apply(void Function() func) {
+    func();
+    return this;
+  }
+
+  R run<R>(R Function() func) {
+    return func();
+  }
 }
