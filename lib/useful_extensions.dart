@@ -4,7 +4,6 @@ import 'package:logger/logger.dart';
 
 part 'package:useful_extensions/string_extensions/string_checks.dart';
 part 'package:useful_extensions/string_extensions/string_transformation.dart';
-part 'package:useful_extensions/string_extensions/valid_strings.dart';
 part 'package:useful_extensions/bool_extensions/bool_extensions.dart';
 part 'package:useful_extensions/iterable_extensions/iterable_methods.dart';
 part 'package:useful_extensions/iterable_extensions/iterable_operators.dart';

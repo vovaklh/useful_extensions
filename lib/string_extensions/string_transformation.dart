@@ -1,7 +1,7 @@
 part of useful_extensions;
 
 extension StringTransformation on String {
-  String get last => this[length - 1];
+  String get last => isEmpty.not() ? this[length - 1] : this;
 
   int toInt() => int.parse(this);
 
@@ -18,11 +18,7 @@ extension StringTransformation on String {
   String? removeAllWhiteSpace() => replaceAll(RegExp(r'\s+\b|\b\s'), '');
 
   String reversed() {
-    var res = '';
-    for (int i = length; i >= 0; --i) {
-      res = this[i];
-    }
-    return res;
+    return isEmpty.not() ? String.fromCharCodes(codeUnits.reversed) : this;
   }
 
   String? replaceAfter(
@@ -38,14 +34,14 @@ extension StringTransformation on String {
         : replaceRange(index + 1, length, replacement);
   }
 
-  String replaceBefore(
+  String? replaceBefore(
     String delimiter,
     String replacement, [
     String? defaultValue,
   ]) {
     final index = indexOf(delimiter);
     return (index == -1)
-        ? defaultValue!.isNullOrEmpty
+        ? defaultValue.isNullOrEmpty
             ? this
             : defaultValue
         : replaceRange(0, index, replacement);

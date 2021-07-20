@@ -17,8 +17,8 @@ extension StringChecks on String? {
         : false;
   }
 
-  bool isPasswordLongerThan({int length = 8}) {
-    return isNullOrEmpty.not() ? this!.length >= length : false;
+  bool isPasswordLengthLonger({int length = 8}) {
+    return isNotBlank ? this!.length >= length : false;
   }
 
   bool anyChar(bool predicate(String element)) {
