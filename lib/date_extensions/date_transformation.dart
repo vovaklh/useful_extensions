@@ -25,25 +25,6 @@ extension DateTransformation on DateTime {
     );
   }
 
-  DateTime operator +(DateTime time) {
-    return add(Duration(
-      days: time.day,
-      hours: time.hour,
-      minutes: time.minute,
-      seconds: time.second,
-      milliseconds: time.millisecond,
-    ));
-  }
-
-  DateTime operator -(DateTime time) {
-    return subtract(Duration(
-        days: time.day,
-        hours: time.hour,
-        minutes: time.minute,
-        seconds: time.second,
-        milliseconds: time.millisecond));
-  }
-
   DateTime min(DateTime other) {
     return (millisecondsSinceEpoch < other.millisecondsSinceEpoch)
         ? this
