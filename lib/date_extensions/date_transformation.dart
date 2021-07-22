@@ -1,6 +1,7 @@
 part of useful_extensions;
 
 extension DateTransformation on DateTime {
+  /// Returns only year, month and day
   DateTime get date => DateTime(year, month, day);
 
   DateTime copyWith({
@@ -25,36 +26,42 @@ extension DateTransformation on DateTime {
     );
   }
 
+  /// Returns the earliest date
   DateTime min(DateTime other) {
     return (millisecondsSinceEpoch < other.millisecondsSinceEpoch)
         ? this
         : other;
   }
 
+  /// Returns a later date
   DateTime max(DateTime other) {
     return (millisecondsSinceEpoch > other.millisecondsSinceEpoch)
         ? this
         : other;
   }
 
+  /// Returns difference between two dates in days
   int differenceInDays(DateTime other) {
     return DateTime(year, month, day)
         .difference(DateTime(other.year, other.month, other.day))
         .inDays;
   }
 
+  /// Returns difference between two dates in hours
   int differenceInHours(DateTime other) {
     return DateTime(year, month, day)
         .difference(DateTime(other.year, other.month, other.day))
         .inHours;
   }
 
+  /// Returns difference between two dates in minutes
   int differenceInMinutes(DateTime other) {
     return DateTime(year, month, day)
         .difference(DateTime(other.year, other.month, other.day))
         .inMinutes;
   }
 
+  /// Returns difference between two dates in seconds
   int differenceInSeconds(DateTime other) {
     return DateTime(year, month, day)
         .difference(DateTime(other.year, other.month, other.day))
